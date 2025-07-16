@@ -64,6 +64,8 @@ public:
         return serialize();
     }
 
+    ~Task() = default;
+
 private:
     std::string title;
     std::string description;
