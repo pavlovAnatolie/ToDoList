@@ -16,7 +16,9 @@ FetchContent_MakeAvailable(googletest)
 # Add the test executable
 add_executable(test_task
     test_task.cpp
+    test_todolist.cpp
     ../Task.cpp
+    ../ToDoList.cpp
 )
 
 target_include_directories(test_task PRIVATE ../)
