@@ -6,3 +6,7 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(progrmmingExam main.cpp
         Task.cpp
         Task.h)
+
+# Add unit tests
+enable_testing()
+add_subdirectory(unit_testing)
