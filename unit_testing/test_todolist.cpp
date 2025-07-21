@@ -32,7 +32,7 @@ TEST(TodoListTest, SortByPriority) {
     list.removeTask(1); // Should remove HIGH
     // Next should be MEDIUM
     list.removeTask(1); // Should remove MEDIUM
-    // Last should be LOW
+    // ultimo should be LOW
     EXPECT_TRUE(list.removeTask(1));
     EXPECT_FALSE(list.removeTask(1));
 }
