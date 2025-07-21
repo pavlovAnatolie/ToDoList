@@ -22,9 +22,6 @@ public:
 
     explicit TodoList(const std::string& file) : filename(file) {}
 
-    //void setFilename(const std::string& file) { filename = file; } maybe in the future if I want to change the file
-    //std::string getFilename() const { return filename; }
-
     void addTask(const Task& t) { tasks.push_back(t); }
 
     bool removeTask(size_t idx) {
@@ -58,6 +55,7 @@ public:
     void listTasks() const {
         for (size_t i = 0; i < tasks.size(); ++i) {
             const auto& t = tasks[i];
+
             std::cout << i + 1 << ". "
                       << (t.isCompleted() ? "[X] " : "[ ] ")
                       << "[" << static_cast<int>(t.getPriority()) << "] "

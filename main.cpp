@@ -1,8 +1,12 @@
 #include <iostream>
 #include <limits>
+#include <unistd.h>
+#include <linux/limits.h>
+
 #include "ToDoList.h"
 
 void printMenu() {
+    std::cout << "\033[1;34m" << std::string(60, '=') << "\033[0m" << std::endl;
     std::cout << "\n====== ToDo List Menu ======" << std::endl;
     std::cout << "1. List tasks" << std::endl;
     std::cout << "2. Add task" << std::endl;
@@ -45,10 +49,18 @@ std::optional<DueDate> inputDueDate() {
 }
 
 int main() {
+    // Get the current working directory to understand where the file is saved
+    /*char cwd[PATH_MAX];
+    if (getcwd(cwd, sizeof(cwd)) != nullptr) {
+        std::cout << "Current working directory: " << cwd << std::endl;
+    }*/
+
     std::string filename = "todolist.txt";
     TodoList todo(filename);
     todo.loadFromFile();
-    std::cout << "Welcome to the ToDo List App!" << std::endl;
+
+    std::cout << "\033[1;35mWelcome to the ToDo List App made by Anatolie Pavlov!\033[0m" << std::endl;
+
     int choice;
     do {
         printMenu();
@@ -111,6 +123,7 @@ int main() {
             default:
                 std::cout << "Invalid option." << std::endl;
         }
+
     } while (choice != 0);
     return 0;
 }
