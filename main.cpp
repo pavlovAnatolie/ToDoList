@@ -3,7 +3,7 @@
 #include "ToDoList.h"
 
 void printMenu() {
-    std::cout << "\n==== ToDo List Menu ====" << std::endl;
+    std::cout << "\n====== ToDo List Menu ======" << std::endl;
     std::cout << "1. List tasks" << std::endl;
     std::cout << "2. Add task" << std::endl;
     std::cout << "3. Remove task" << std::endl;

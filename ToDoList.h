@@ -75,8 +75,8 @@ public:
         for (const auto& t : tasks) {
             f << t.serialize() << "\n";
         }
-
         f.close();
+
     }
 
     void loadFromFile() {
