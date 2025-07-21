@@ -22,7 +22,7 @@ public:
 
     explicit TodoList(const std::string& file) : filename(file) {}
 
-    //void setFilename(const std::string& file) { filename = file; } maybe in the future if i wanna change the file
+    //void setFilename(const std::string& file) { filename = file; } maybe in the future if I want to change the file
     //std::string getFilename() const { return filename; }
 
     void addTask(const Task& t) { tasks.push_back(t); }
@@ -50,8 +50,7 @@ public:
     }
 
     void sortByPriority() {
-        std::sort(tasks.begin(), tasks.end(),
-            [](const Task& a, const Task& b) {
+        std::sort(tasks.begin(), tasks.end(),[](const Task& a, const Task& b) {
                 return static_cast<int>(a.getPriority()) > static_cast<int>(b.getPriority());
             });
     }
@@ -76,6 +75,8 @@ public:
         for (const auto& t : tasks) {
             f << t.serialize() << "\n";
         }
+
+        f.close();
     }
 
     void loadFromFile() {
