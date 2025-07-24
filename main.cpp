@@ -6,8 +6,9 @@
 #include "ToDoList.h"
 
 void printMenu() {
-    std::cout << "\033[1;34m" << std::string(60, '=') << "\033[0m" << std::endl;
-    std::cout << "\n====== ToDo List Menu ======" << std::endl;
+    std::cout << "\033[1;34m" << std::string(60, '=') << "\033[0m\n" << std::endl;
+    
+    std::cout << "====== ToDo List Menu ======" << std::endl;
     std::cout << "1. List tasks" << std::endl;
     std::cout << "2. Add task" << std::endl;
     std::cout << "3. Remove task" << std::endl;
